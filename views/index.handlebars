@@ -3,24 +3,52 @@
 
 Create a button in index.handlebars that will submit the user input into the database. --}}
 
-<div class="container">
-  <div class="row m-5 p-5">
-    <div class="col"></div>
+<div class="container bg-warning">
+<div style="display:flex;">
+  <ul style="justify-content: start;">
+  {{#each burgers}}
+    {{#unless devoured}}
+      <li>{{burger_name}}</li>
+      <button class="change-devour" data-id="{{id}}" data-devoured="{{devoured}}">
+		Devour!
+	</button>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+ <ul style="justify-content: end;">
+  {{#each burgers}}
+    {{#if devoured}}
+      <li>{{burger_name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+  {{!-- top row --}}
+  <div class="row m-3 p-5">
+    <div class="col text-center">
+      <img src="/assets/img/burger.jpeg" alt="picture of a burger">
+    </div>
     
   </div>
-  <div class="row text-center m-5 p-5">
+  {{!-- middle row  --}}
+  <div class="row text-center">
     <div class= "col"></div>
     <div class="col">
-      <form>
-        <div class="form-group ">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <form id="spongebobform"> 
+        <div class="form-group">
+        <label for="exampleFormControlTextarea1">Eat Da Burgarrr!!@#?</label>
+        <textarea class="form-control" id="input" rows="3"></textarea>
+        <button type="submit" id="createButton" class="btn btn-primary m-1">Submit</button>
+        <br>
+        <p class="p-3">Enter a burger you want to eat!</p>
         </div>
       </form>
     </div>
     <div class= "col"></div>
   </div>
-  <div class="row m-5 p-5">
+  {{!-- bottom row  --}}
+  <div class="row m-5 p-5 text-center">
     <div class="col"></div>
     
 </div>
