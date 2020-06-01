@@ -1,10 +1,13 @@
+$(document).ready(function () {
+$("#bob").hide()
 
 $(function () {
   // devour/update button
     $(".change-devour").on("click", function (event) {
+      event.preventDefault()
       var id = $(this).data("id");
-      
-  
+      $("#bob").show()
+      setTimeout(function() { $("#bob").hide(); }, 5000);
       var newDevourState = {
         devoured: 1
       };
@@ -46,4 +49,4 @@ $(function () {
   
 
   });
-  
+})
