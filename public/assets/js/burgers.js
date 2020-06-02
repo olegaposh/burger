@@ -7,7 +7,7 @@ $(function () {
       event.preventDefault()
       var id = $(this).data("id");
       $("#bob").show()
-      setTimeout(function() { $("#bob").hide(); }, 5000);
+      setTimeout(function() { $("#bob").hide(); }, 3000);
       var newDevourState = {
         devoured: 1
       };
